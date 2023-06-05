@@ -78,7 +78,7 @@ void setup() {
   new SpanAccessory(); 
   
     new Service::AccessoryInformation(); 
-      new Characteristic::Name("LED #1"); 
+      new Characteristic::Name("Cuarto"); 
       new Characteristic::Manufacturer("HomeSpan"); 
       new Characteristic::SerialNumber("123-ABC"); 
       new Characteristic::Model("20mA LED"); 
@@ -88,25 +88,13 @@ void setup() {
     new Service::HAPProtocolInformation();      
       new Characteristic::Version("1.1.0");     
 
-  //  In Example 2 we instantiated a LightBulb Service and its "On" Characteristic here.  We are now going to replace these two lines (by commenting them out)...
 
-  //  new Service::LightBulb();                   
-  //    new Characteristic::On();                 
-
-  // ...with a single new line instantiating a new class we will call DEV_LED():
-
-    new DEV_LED(18);        // this instantiates a new LED Service.  Where is this defined?  What happpened to Characteristic::On?  Keep reading...
-
-  // The full definition and code for DEV_LED is implemented in a separate file called "DEV_LED.h" that is specified using the #include at the top of this program.
-  // The prefix DEV_ is not required but it's a helpful convention when naming all your device-specific Services. Note that DEV_LED will include all the required
-  // Characterictics of the Service, so you DO NOT have to separately instantiate Characteristic::On --- everything HomeSpan needs for DEV_LED should be implemented
-  // in DEV_LED itself (though it's not all that much).  Finally, note that we created DEV_LED to take a single integer argument.  If you guessed this is
-  // the number of the Pin to which you have attached an LED, you'd be right.  See DEV_LED.h for a complete explanation of how it works.
+    new DEV_LED(18);      
 
   new SpanAccessory(); 
   
     new Service::AccessoryInformation();    
-      new Characteristic::Name("LED #2");    
+      new Characteristic::Name("LED 1");    
       new Characteristic::Manufacturer("HomeSpan"); 
       new Characteristic::SerialNumber("123-ABC");  
       new Characteristic::Model("20mA LED");   
@@ -116,26 +104,66 @@ void setup() {
     new Service::HAPProtocolInformation();          
       new Characteristic::Version("1.1.0");         
 
-  //  new Service::LightBulb();                       // Same as above, this line is deleted...
-  //    new Characteristic::On();                     // This line is also deleted...
+  
   
     new DEV_LED(19); 
     
-    new SpanAccessory();                            // Begin by creating a new Accessory using SpanAccessory(), which takes no arguments 
-  
-    new Service::AccessoryInformation();            // HAP requires every Accessory to implement an AccessoryInformation Service, which has 6 required Characteristics
-      new Characteristic::Name("My Ceiling Fan");     // Name of the Accessory, which shows up on the HomeKit "tiles", and should be unique across Accessories
-      new Characteristic::Manufacturer("HomeSpan");   // Manufacturer of the Accessory (arbitrary text string, and can be the same for every Accessory)
-      new Characteristic::SerialNumber("123-ABC");    // Serial Number of the Accessory (arbitrary text string, and can be the same for every Accessory)
-      new Characteristic::Model("120-Volt Lamp");     // Model of the Accessory (arbitrary text string, and can be the same for every Accessory)
-      new Characteristic::FirmwareRevision("0.9");    // Firmware of the Accessory (arbitrary text string, and can be the same for every Accessory) 
-      new Characteristic::Identify();                 // Create the required Identify  
+    new SpanAccessory();                           
+    new Service::AccessoryInformation();           
+      new Characteristic::Name("LED 2");  
+      new Characteristic::Manufacturer("HomeSpan");
+      new Characteristic::SerialNumber("123-ABC"); 
+      new Characteristic::Model("120-Volt Lamp");  
+      new Characteristic::FirmwareRevision("0.9"); 
+      new Characteristic::Identify();              
       
-    new Service::HAPProtocolInformation();          // Create the HAP Protcol Information Service  
-      new Characteristic::Version("1.1.0");        // ...and replaced with a single line that instantiates a second DEV_LED Service on Pin 17
+    new Service::HAPProtocolInformation();         
+      new Characteristic::Version("1.1.0");        
 
-     new DEV_FAN(32);
+     new DEV_LED(32);
 
+new SpanAccessory();
+    new Service::AccessoryInformation();           
+      new Characteristic::Name("LED 3");  
+      new Characteristic::Manufacturer("HomeSpan");
+      new Characteristic::SerialNumber("123-ABC"); 
+      new Characteristic::Model("120-Volt Lamp");  
+      new Characteristic::FirmwareRevision("0.9"); 
+      new Characteristic::Identify();              
+      
+    new Service::HAPProtocolInformation();         
+      new Characteristic::Version("1.1.0");        
+
+     new DEV_LED(33);
+
+new SpanAccessory();
+    new Service::AccessoryInformation();           
+      new Characteristic::Name("LED 4");  
+      new Characteristic::Manufacturer("HomeSpan");
+      new Characteristic::SerialNumber("123-ABC"); 
+      new Characteristic::Model("120-Volt Lamp");  
+      new Characteristic::FirmwareRevision("0.9"); 
+      new Characteristic::Identify();              
+      
+    new Service::HAPProtocolInformation();         
+      new Characteristic::Version("1.1.0");        
+
+     new DEV_LED(21);
+
+
+new SpanAccessory();
+new Service::AccessoryInformation();           
+      new Characteristic::Name("LED 5");  
+      new Characteristic::Manufacturer("HomeSpan");
+      new Characteristic::SerialNumber("123-ABC"); 
+      new Characteristic::Model("120-Volt Lamp");  
+      new Characteristic::FirmwareRevision("0.9"); 
+      new Characteristic::Identify();              
+      
+    new Service::HAPProtocolInformation();         
+      new Characteristic::Version("1.1.0");        
+
+     new DEV_LED(26);
 } // end of setup()
 
 //////////////////////////////////////
